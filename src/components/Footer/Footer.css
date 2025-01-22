@@ -41,3 +41,39 @@
     line-height: 22px;
   }
 }
+
+@media screen and (max-width: 759px) {
+  .footer {
+    flex-direction: column-reverse;
+    padding: 20px 16px 22px;
+    box-sizing: border-box;
+    height: 176px;
+  }
+
+  .footer__api {
+    margin: 38px auto 0 auto;
+  }
+
+  .footer__content {
+    display: grid;
+    grid-template-areas:
+      "home icons"
+      "site site";
+    width: 100%;
+  }
+
+  .footer__home {
+    grid-area: home;
+    margin: 0;
+  }
+
+  .footer__site {
+    grid-area: site;
+    margin: 0;
+  }
+
+  .footer__icons {
+    grid-area: icons;
+    justify-content: end;
+  }
+}

@@ -7,8 +7,8 @@ function Footer({}) {
     <footer className="footer">
       <p className="footer__api">© 2025 Supersite, Powered by News API</p>
       <div className="footer__content">
-        <p>Home</p>
-        <p>TripleTen</p>
+        <p className="footer__home">Home</p>
+        <p className="footer__site">TripleTen</p>
         <div className="footer__icons">
           <img className="footer__git" src={github} alt="GitHub logo" />
           <img className="footer__fb" src={facebook} alt="Facebook logo" />

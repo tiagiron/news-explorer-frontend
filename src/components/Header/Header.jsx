@@ -4,9 +4,9 @@ import "./Header.css";
 function Header({ openLoginModal }) {
   return (
     <header className="header">
-      <nav className="header__content">
+      <div className="header__content">
         <p className="header__title">NewsExplorer</p>
-        <div className="header__nav">
+        <nav className="header__nav">
           <Link to="/" className="header__home-link">
             <p className="header__home">Home</p>
           </Link>
@@ -17,8 +17,8 @@ function Header({ openLoginModal }) {
           >
             Sign In
           </button>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </header>
   );
 }

@@ -1,4 +1,4 @@
-.modal__button-content {
+.login-modal__button-content {
   display: flex;
   gap: 5px;
   align-items: center;
@@ -23,4 +23,18 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 16.94px;
+}
+
+.modal__button-open-modal:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 519px) {
+  .login-modal__button-content {
+    display: flex;
+    position: absolute;
+    bottom: calc(100% - 360px);
+    left: 0;
+    max-width: 100%;
+  }
 }

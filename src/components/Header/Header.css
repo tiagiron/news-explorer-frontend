@@ -7,6 +7,7 @@
   height: 80px;
   padding: 0;
   width: 100%;
+  z-index: 1;
 }
 
 .header__content {
@@ -75,7 +76,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 1100px) and (min-width: 760px) {
+@media screen and (max-width: 1100px) {
   .header {
     height: 66px;
   }
@@ -92,5 +93,20 @@
     font-size: 16px;
     padding: 8px 12px;
     margin-right: 40px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .header {
+    height: 56px;
+  }
+
+  .header__title {
+    margin-left: 16px;
+    font-size: 16px;
+  }
+
+  .header__nav {
+    visibility: hidden;
   }
 }

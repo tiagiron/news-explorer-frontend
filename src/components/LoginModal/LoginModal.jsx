@@ -58,7 +58,7 @@ function LoginModal({
           <span className="modal__error">{errors.password}</span>
         )}
       </label>
-      <span className="modal__button-content">
+      <span className="login-modal__button-content">
         <p className="modal__button-p">or </p>
         <button
           className="modal__button-open-modal"

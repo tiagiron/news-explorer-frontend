@@ -79,7 +79,7 @@ function RegisterModal({
           <span className="modal__error">{errors.username}</span>
         )}
       </label>
-      <span className="modal__button-content">
+      <span className="register-modal__button-content">
         <p className="modal__button-p">or </p>
         <button
           className="modal__button-open-modal"
