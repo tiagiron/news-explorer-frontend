@@ -1,16 +1,31 @@
+.preloader {
+  background-color: #f5f6f7;
+  height: 282px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.preloader__description {
+  margin: 0;
+  font-family: "Roboto", arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #b6bcbf;
+}
+
 .circle-preloader {
   display: block;
-  width: 50px;
-  height: 50px;
-  border: 4px solid #444;
+  width: 74px;
+  height: 74px;
+  border: 1px solid;
   border-bottom-color: #888;
   border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
+  border-image: conic-gradient(to right, #1a1b22 100%, #d1d2d600 0%) 1;
+  margin: 0 auto;
   animation: spin 0.75s infinite linear;
 }
 

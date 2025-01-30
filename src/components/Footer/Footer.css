@@ -8,12 +8,18 @@
   justify-content: space-between;
   margin: 0;
   padding: 0 104px;
+  color: #1a1b22;
 }
 
 .footer__api {
   color: #b6bcbf;
   font-size: 16px;
   line-height: 22px;
+}
+
+.footer__home-link {
+  text-decoration: none;
+  color: #1a1b22;
 }
 
 .footer__content {

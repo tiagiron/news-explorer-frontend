@@ -1,6 +1,8 @@
 import "./MainComponent.css";
 import SearchForm from "../SearchForm/SearchForm";
 import About from "../About/About";
+import Preloader from "../Preloader/Preloader";
+import SearchResultsSection from "../SearchResultsSection/SearchResultsSection";
 
 function MainComponent({}) {
   return (
@@ -8,6 +10,9 @@ function MainComponent({}) {
       <div className="main">
         <SearchForm />
       </div>
+      {/* <Preloader /> */}
+      <SearchResultsSection />
+      {/* searchResults && <SearchResultsContainer results={searchResults} */}
       <About />
     </main>
   );

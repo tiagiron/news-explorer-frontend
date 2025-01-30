@@ -1,25 +1,18 @@
 import { Link } from "react-router-dom";
 import "./Header.css";
+import { useState } from "react";
+import Navigation from "../Navigation/Navigation";
 
 function Header({ openLoginModal }) {
   return (
-    <header className="header">
-      <div className="header__content">
-        <p className="header__title">NewsExplorer</p>
-        <nav className="header__nav">
-          <Link to="/" className="header__home-link">
-            <p className="header__home">Home</p>
-          </Link>
-          <button
-            className="header__signin-btn"
-            type="button"
-            onClick={openLoginModal}
-          >
-            Sign In
-          </button>
-        </nav>
-      </div>
-    </header>
+    <div className="header__container">
+      <header className="header">
+        <Link to="/" className="header__title-link">
+          <p className="header__title">NewsExplorer</p>
+        </Link>
+        <Navigation openLoginModal={openLoginModal} />
+      </header>
+    </div>
   );
 }
 
