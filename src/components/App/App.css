@@ -1,9 +1,16 @@
 .page__content {
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0;
   /* position: relative; */
 }
+
+/* .page__background-image {
+  background-image: url("../../assets/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+} */
 
 .modal__label {
   font-family: "Inter", arial, sans-serif;

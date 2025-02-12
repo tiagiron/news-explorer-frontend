@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Footer.css";
 import github from "../../assets/github.svg";
-import facebook from "../../assets/facebook.svg";
+import linkedin from "../../assets/linkedin-logo.svg";
 
 function Footer({}) {
   return (
@@ -11,10 +11,24 @@ function Footer({}) {
         <Link to="/" className="footer__home-link">
           <p className="footer__home">Home</p>
         </Link>
-        <p className="footer__site">TripleTen</p>
+        <a
+          className="footer__site"
+          href="https://tripleten.com"
+          target="_blank"
+        >
+          TripleTen
+        </a>
         <div className="footer__icons">
-          <img className="footer__git" src={github} alt="GitHub logo" />
-          <img className="footer__fb" src={facebook} alt="Facebook logo" />
+          <a href="https://github.com/tiagiron" target="_blank">
+            <img className="footer__git" src={github} alt="GitHub logo" />
+          </a>
+          <a href="https://www.linkedin.com/in/tia-giron-ms/" target="_blank">
+            <img
+              className="footer__linkedin"
+              src={linkedin}
+              alt="LinkedIn logo"
+            />
+          </a>
         </div>
       </div>
     </footer>

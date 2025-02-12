@@ -1,13 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
-import { useState } from "react";
+import React, { useState, useContext } from "react";
 import Navigation from "../Navigation/Navigation";
 
 function Header({ openLoginModal }) {
+  const location = useLocation();
+
   return (
     <div className="header__container">
       <header className="header">
-        <Link to="/" className="header__title-link">
+        <Link
+          to="/"
+          className={`header__title-link ${location.pathname === "/" ? "header__title-link-home" : ""}`}
+        >
           <p className="header__title">NewsExplorer</p>
         </Link>
         <Navigation openLoginModal={openLoginModal} />

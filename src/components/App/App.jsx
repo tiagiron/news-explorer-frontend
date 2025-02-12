@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
+import CurrentUserProvider from "../../contexts/CurrentUserContext";
 import "./App.css";
 import Header from "../Header/Header";
 import MainComponent from "../MainComponent/MainComponent";
@@ -7,10 +8,15 @@ import Footer from "../Footer/Footer";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import RegisterConfirmationModal from "../RegisterConfirmationModal/RegisterConfirmationModal";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import SavedArticles from "../SavedArticles/SavedArticles";
+import AppContext from "../../contexts/AppContext";
 
 function App() {
   //States
   const [activeModal, setActiveModal] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState({});
 
   //Modal open and close
   const openLoginModal = () => {
@@ -23,6 +29,14 @@ function App() {
 
   const closeActiveModal = () => {
     setActiveModal("");
+  };
+
+  //login logout register
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+    setCurrentUser({});
   };
 
   //Effects
@@ -49,40 +63,50 @@ function App() {
   }, [activeModal]);
 
   return (
-    <div className="page">
-      <div className="page__content">
-        <Header openLoginModal={openLoginModal} />
-        <Routes>
-          <Route path="/" element={<MainComponent />} />
-          {/* <Route path="/saved-news" element={
-            <ProtectedRoute>
-              <SavedArticles/>
-            </ProtectedRoute>
-          }
-          /> */}
-        </Routes>
+    <AppContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
+      <CurrentUserProvider value={{ currentUser }}>
+        <div className="page">
+          <div className="page__content">
+            <Header
+              openLoginModal={openLoginModal}
+              handleLogout={handleLogout}
+            />
+            <Routes>
+              <Route path="/" element={<MainComponent />} />
 
-        <Footer />
-      </div>
-      <LoginModal
-        isOpen={activeModal === "login"}
-        buttonText={"Sign in"}
-        onClose={closeActiveModal}
-        openRegisterModal={openRegisterModal}
-      />
-      <RegisterModal
-        isOpen={activeModal === "register"}
-        buttonText={"Sign up"}
-        onClose={closeActiveModal}
-        openLoginModal={openLoginModal}
-      />
+              <Route
+                path="/saved-news"
+                element={
+                  // <ProtectedRoute>
+                  <SavedArticles />
+                  // </ProtectedRoute>
+                }
+              />
+            </Routes>
 
-      <RegisterConfirmationModal
-        activeModal={activeModal}
-        onClose={closeActiveModal}
-        openLoginModal={openLoginModal}
-      />
-    </div>
+            <Footer />
+          </div>
+          <LoginModal
+            isOpen={activeModal === "login"}
+            buttonText={"Sign in"}
+            onClose={closeActiveModal}
+            openRegisterModal={openRegisterModal}
+          />
+          <RegisterModal
+            isOpen={activeModal === "register"}
+            buttonText={"Sign up"}
+            onClose={closeActiveModal}
+            openLoginModal={openLoginModal}
+          />
+
+          <RegisterConfirmationModal
+            activeModal={activeModal}
+            onClose={closeActiveModal}
+            openLoginModal={openLoginModal}
+          />
+        </div>
+      </CurrentUserProvider>
+    </AppContext.Provider>
   );
 }
 

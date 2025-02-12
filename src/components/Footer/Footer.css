@@ -30,9 +30,19 @@
   gap: 40px;
 }
 
+.footer__site {
+  color: black;
+  text-decoration: none;
+}
+
 .footer__icons {
   display: flex;
   gap: 25.89px;
+}
+
+.footer__linkedin {
+  width: 20px;
+  height: 20px;
 }
 
 @media screen and (max-width: 1100px) and (min-width: 760px) {
