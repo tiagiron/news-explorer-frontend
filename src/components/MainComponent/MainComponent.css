@@ -7,6 +7,11 @@
   position: relative;
 }
 
+.search-results-section {
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 1360px) and (min-width: 1101px) {
   .main {
     height: 475px;

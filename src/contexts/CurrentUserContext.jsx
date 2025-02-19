@@ -13,19 +13,19 @@ const CurrentUserProvider = ({ children }) => {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // const removedSavedArticle = (id) => {
-  //   setCurrentUser((prev) => ({
-  //     ...prev,
-  //     savedArticles: prev.savedArticles.filter((article) => article.id !== id),
-  //   }));
-  // };
+  const removeSavedArticle = (id) => {
+    setCurrentUser((prev) => ({
+      ...prev,
+      savedArticles: prev.savedArticles.filter((article) => article.id !== id),
+    }));
+  };
 
   return (
     <CurrentUserContext.Provider
       value={{
         ...currentUser,
         isLoggedIn,
-        // removedSavedArticle
+        removeSavedArticle,
       }}
     >
       {children}

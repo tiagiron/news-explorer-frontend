@@ -1,7 +1,7 @@
 import "./NothingFound.css";
 import NothingFoundImage from "../../assets/nothing-found.svg";
 
-function NothingFound({}) {
+const NothingFound = () => (
   <div className="nothing-found">
     <img
       src={NothingFoundImage}
@@ -12,7 +12,7 @@ function NothingFound({}) {
     <span className="nothing-found__description">
       Sorry, but nothing matched your search terms.
     </span>
-  </div>;
-}
+  </div>
+);
 
 export default NothingFound;

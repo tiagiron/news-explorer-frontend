@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import logoutwhite from "../../assets/logout-white.svg";
 import logoutblack from "../../assets/logout-black.svg";
 
-function Navigation({ openLoginModal, isLoggedIn, handleLogOut }) {
+function Navigation({ openLoginModal, isLoggedIn, handleLogout }) {
   const currentUser = useContext(CurrentUserContext);
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
@@ -15,10 +15,14 @@ function Navigation({ openLoginModal, isLoggedIn, handleLogOut }) {
     setIsOpen((open) => !open);
   };
 
+  const onClose = () => {
+    setIsOpen(!open);
+  };
+
   return (
     <nav className={`nav ${isOpen ? "is-open" : ""}`}>
       <button
-        className={`nav__icon-menu ${isOpen ? `is-active` : ""}`}
+        className={`nav__icon-menu ${isOpen ? `is-active` : ""} ${isSavedNewsPage ? "nav__icon-menu-saved" : ""}`}
         type="button"
         onClick={toggleMobileMenu}
       >
@@ -29,34 +33,36 @@ function Navigation({ openLoginModal, isLoggedIn, handleLogOut }) {
       <div className={`nav__content ${isOpen ? `is-open` : ""} `}>
         <Link
           to="/"
-          className={`nav__home-link ${location.pathname === "/" ? "nav__home-link-home" : ""}`}
+          className={`nav__home-link ${isOpen ? `is-open` : ""} ${location.pathname === "/" ? "nav__home-link-home" : ""}`}
         >
           <p className="nav__home">NewsExplorer</p>
         </Link>
         <Link
           to="/"
-          className={`nav__home-link ${location.pathname === "/" ? "nav__home-link-home" : ""}`}
+          className={`nav__home-link ${isOpen ? `is-open` : ""} ${location.pathname === "/" ? "nav__home-link-home" : ""}`}
+          onClick={onClose}
         >
-          <p className="nav__home">Home</p>
+          Home
         </Link>
 
         {isLoggedIn ? (
           <>
             <Link
               to="/saved-news"
-              className={`nav__articles ${isSavedNewsPage ? "nav__articles-saved" : "nav__articles-home"}`}
+              className={`nav__articles ${isOpen ? `is-open` : ""} ${isSavedNewsPage ? "nav__articles-saved" : "nav__articles-home"}`}
+              onClick={onClose}
             >
               Saved Articles
             </Link>
             <button
               type="button"
-              className={`nav__logout ${isSavedNewsPage ? "nav__logout-saved" : "nav__logout-home"}`}
-              onClick={handleLogOut}
+              className={`nav__logout ${isOpen ? `is-open` : ""} ${isSavedNewsPage ? "nav__logout-saved" : "nav__logout-home"}`}
+              onClick={handleLogout}
             >
               {currentUser?.name || "Tia"}
               <img
                 src={isSavedNewsPage ? logoutblack : logoutwhite}
-                className="nav__logout-icon"
+                className={`nav__logout-icon ${isOpen ? `is-open` : ""} ${isSavedNewsPage ? "nav__logout-icon-saved" : ""}`}
                 alt="Logout"
               />
             </button>

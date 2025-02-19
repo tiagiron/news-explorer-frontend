@@ -2,18 +2,39 @@ import "./MainComponent.css";
 import SearchForm from "../SearchForm/SearchForm";
 import About from "../About/About";
 import Preloader from "../Preloader/Preloader";
-import SearchResultsSection from "../SearchResultsSection/SearchResultsSection";
 import NothingFound from "../NothingFound/NothingFound";
+import NewsCardList from "../NewsCardList/NewsCardList";
 
-function MainComponent({}) {
+function MainComponent({
+  handleSaveArticle,
+  savedArticles,
+  isLoggedIn,
+  filteredArticles,
+  isLoading,
+  searchQuery,
+  handleSearch,
+}) {
   return (
     <main>
       <div className="main">
-        <SearchForm />
+        <SearchForm handleSearch={handleSearch} />
       </div>
-      {/* <Preloader /> */}
-      <SearchResultsSection />
-      {/* searchResults && <SearchResultsContainer results={searchResults} */}
+      {isLoading ? (
+        <Preloader />
+      ) : (
+        <section className="search-results-section">
+          {filteredArticles.length > 0 ? (
+            <NewsCardList
+              articles={filteredArticles}
+              handleSaveArticle={handleSaveArticle}
+              savedArticles={savedArticles}
+              isLoggedIn={isLoggedIn}
+            />
+          ) : (
+            searchQuery && <NothingFound />
+          )}
+        </section>
+      )}
       <About />
     </main>
   );

@@ -3,7 +3,7 @@ import "./Header.css";
 import React, { useState, useContext } from "react";
 import Navigation from "../Navigation/Navigation";
 
-function Header({ openLoginModal }) {
+function Header({ openLoginModal, isLoggedIn, handleLogout }) {
   const location = useLocation();
 
   return (
@@ -15,7 +15,11 @@ function Header({ openLoginModal }) {
         >
           <p className="header__title">NewsExplorer</p>
         </Link>
-        <Navigation openLoginModal={openLoginModal} />
+        <Navigation
+          openLoginModal={openLoginModal}
+          isLoggedIn={isLoggedIn}
+          handleLogout={handleLogout}
+        />
       </header>
     </div>
   );

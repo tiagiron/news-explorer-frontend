@@ -62,7 +62,6 @@
   .footer {
     flex-direction: column-reverse;
     padding: 20px 16px 22px;
-    box-sizing: border-box;
     height: 176px;
   }
 
