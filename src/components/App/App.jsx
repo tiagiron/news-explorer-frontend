@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
-import { useNavigation } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+// import { HashRouter as Router, Route } from "react-router-dom";
 import { fetchNewsArticles } from "../../utils/newsApi";
 import CurrentUserProvider from "../../contexts/CurrentUserContext";
 import "./App.css";
