@@ -14,7 +14,6 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import SavedArticles from "../SavedArticles/SavedArticles";
 import auth from "../../utils/auth";
 import api from "../../utils/api";
-import { defaultArticles } from "../../utils/constants";
 
 function App() {
   //States
