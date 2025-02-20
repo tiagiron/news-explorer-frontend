@@ -1,4 +1,4 @@
-.login-modal__button-content {
+.modal__button-content--login {
   display: flex;
   gap: 5px;
   align-items: center;

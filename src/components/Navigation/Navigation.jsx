@@ -26,8 +26,8 @@ function Navigation({ openLoginModal, isLoggedIn, handleLogout }) {
         type="button"
         onClick={toggleMobileMenu}
       >
-        <div className="nav__icon-menu-div" />
-        <div className="nav__icon-menu-div" />
+        <div className={`nav__icon-menu-div ${isOpen ? `is-active` : ""}`} />
+        <div className={`nav__icon-menu-div ${isOpen ? `is-active` : ""}`} />
       </button>
 
       <div className={`nav__content ${isOpen ? `is-open` : ""} `}>

@@ -3,7 +3,7 @@ import author from "../../assets/authorsquare.png";
 
 function About({}) {
   return (
-    <div className="about">
+    <section className="about">
       <div className="about__content">
         <img className="about__img" src={author} alt="Tia Giron" />
         <div className="about__author">
@@ -19,15 +19,15 @@ function About({}) {
             connecting and building APIs, scaffolding a web application from
             scratch, and using Figma to design and build a site according to
             industry standards.
-            <br />
-            <br />
+          </p>
+          <p className="about__description">
             Tia loves working with a team, collaborating with clients to build
             their perfect website, and is constantly learning and developing new
             skills as the world of tech evolves rapidly.
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

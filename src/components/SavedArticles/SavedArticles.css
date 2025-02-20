@@ -1,5 +1,5 @@
 .saved-articles__header {
-  padding-top: 120px;
+  padding-top: 40px;
   width: 100%;
 }
 
@@ -38,7 +38,7 @@
 
 @media screen and (max-width: 800px) {
   .saved-articles__header {
-    padding-top: 90px;
+    padding-top: 24px;
   }
 
   .saved-articles__title {
@@ -63,7 +63,7 @@
 
 @media screen and (max-width: 550px) {
   .saved-articles__header {
-    padding-top: 64px;
+    padding-top: 8px;
   }
   .saved-articles__title {
     margin: 0 16px 16px 16px;
