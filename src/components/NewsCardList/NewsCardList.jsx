@@ -22,7 +22,7 @@ export default function NewsCardList({
       }`}
     >
       {!isSavedNewsPage && (
-        <h1 className="news-card-list__title">Search results</h1>
+        <h2 className="news-card-list__title">Search results</h2>
       )}
       {articles.length === 0 ? null : (
         <ul

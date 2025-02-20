@@ -1,15 +1,15 @@
 .news-card-list {
-  max-width: 100%;
   background: #f5f6f7;
   display: flex;
+  flex-direction: column;
 }
 
 .news-card-list-home {
-  flex-wrap: wrap;
+  width: 100%;
 }
 
 .news-card-list-saved {
-  flex-direction: column;
+  max-width: 100%;
 }
 
 .news-card-list__title {
@@ -117,7 +117,7 @@
 
   .news-card-list__articles {
     padding: 0;
-    margin: 24px auto 12px;
+    margin: 0 auto 12px;
   }
 
   .news-card-list__button {
@@ -127,5 +127,9 @@
   .news-card-list-saved {
     margin-top: 24px;
     margin-bottom: 0;
+  }
+
+  .news-card-list__articles-saved {
+    margin-top: 24px;
   }
 }

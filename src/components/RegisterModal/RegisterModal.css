@@ -1,4 +1,4 @@
-.register-modal__button-content {
+.modal__button-content-register {
   display: flex;
   gap: 5px;
   align-items: center;
@@ -14,7 +14,7 @@
 }
 
 @media screen and (max-width: 519px) {
-  .register-modal__button-content {
+  .modal__button-content-register {
     display: flex;
     position: absolute;
     bottom: calc(100% - 450px);
